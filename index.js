@@ -24,6 +24,9 @@ io.on('connection', (socket) => {
   });
 });
 
+app.get('/', (req, res) => {
+  res.send('<h1> serices loaded </h1>');
+});
 async function fetchAddress(latitude, longitude) {
   try {
     const url = `https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`;
@@ -43,7 +46,9 @@ async function fetchAddress(latitude, longitude) {
   }
 }
 
-const port = 3000;
+const port = 80;
 http.listen(port, () => {
   console.log(`Server listening on port ${port}`);
 });
+
+
