@@ -12,8 +12,8 @@ io.on('connection', (socket) => {
 
   socket.on('message', async (data) => {
     try {
-      const location = await fetchAddress(data.location.latitude, data.location.longitude);
-      console.log('Received message:', {...data, ...location});
+      // const location = await fetchAddress(data.location.latitude, data.location.longitude);
+      console.log('Received message:', {...data});
     } catch (error) {
       console.error(error);
     }
